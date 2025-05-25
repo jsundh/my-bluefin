@@ -27,4 +27,6 @@ modules:
         - CascadiaCode
         - CascadiaMono
 
+  - type: gschema-overrides
+
   - type: signing

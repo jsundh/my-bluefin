@@ -1,0 +1,23 @@
+[org.gnome.mutter]
+dynamic-workspaces=false
+
+[org.gnome.desktop.wm.preferences]
+num-workspaces=4
+
+[org.gnome.shell.keybindings]
+focus-active-notification=@as []
+toggle-message-tray=@as []
+toggle-quick-settings=@as []
+
+[org.gnome.desktop.wm.keybindings]
+minimize=@as []
+
+switch-to-workspace-1=['<Super>h']
+switch-to-workspace-2=['<Super>t']
+switch-to-workspace-3=['<Super>n']
+switch-to-workspace-4=['<Super>s']
+
+move-to-workspace-1=['<Super>m']
+move-to-workspace-2=['<Super>w']
+move-to-workspace-3=['<Super>v']
+move-to-workspace-4=['<Super>z']
