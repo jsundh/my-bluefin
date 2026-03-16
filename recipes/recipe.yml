@@ -4,7 +4,7 @@ name: my-bluefin
 description: My personal bluefin-dx image
 
 base-image: ghcr.io/ublue-os/bluefin-dx
-image-version: gts
+image-version: stable
 
 modules:
   - type: bling
