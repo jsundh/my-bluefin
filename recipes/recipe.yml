@@ -34,6 +34,10 @@ modules:
       - source: system
         destination: /
 
+  - type: script
+    snippets:
+      - update-ca-trust
+
   - type: gschema-overrides
 
   - type: systemd
