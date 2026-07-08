@@ -18,6 +18,8 @@ modules:
       - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
     install:
       - sublime-merge
+      - spacenavd
+      - uv
     optfix:
       - sublime_merge
 
@@ -33,5 +35,13 @@ modules:
         destination: /
 
   - type: gschema-overrides
+
+  - type: systemd
+    system:
+      enabled:
+        - spacenavd.service
+    user:
+      enabled:
+        - spacenav-ws.service
 
   - type: signing

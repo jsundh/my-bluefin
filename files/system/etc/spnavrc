@@ -1,0 +1,6 @@
+# spacenavd configuration, see /usr/share/doc/spacenavd/example-spnavrc
+# Per-axis lines override the group line for that axis (parsed sequentially).
+sensitivity-translation = 0.4
+sensitivity-translation-x = 0.2
+sensitivity-translation-y = 0.1
+sensitivity-rotation = 0.5

@@ -1,0 +1,10 @@
+[Unit]
+Description=spacenav-ws 3Dconnexion WebSocket bridge (Onshape browser support)
+
+[Service]
+ExecStart=/usr/bin/uvx spacenav-ws@0.1.5 serve
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
