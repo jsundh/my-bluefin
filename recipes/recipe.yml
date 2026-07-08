@@ -23,6 +23,14 @@ modules:
     optfix:
       - sublime_merge
 
+  - type: dnf
+    repos:
+      copr:
+        - scottames/ghostty
+    install:
+      packages:
+        - ghostty
+
   - type: fonts
     fonts:
       nerd-fonts:

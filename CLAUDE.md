@@ -24,12 +24,13 @@ There are no tests. Real builds happen in GitHub Actions (`.github/workflows/bui
 
 1. `bling` — installs 1password
 2. `rpm-ostree` — adds the Sublime Text repo and installs `sublime-merge` (with `optfix` for its `/opt` install path), plus `spacenavd` and `uv` for SpaceMouse support
-3. `fonts` — Cascadia nerd-fonts
-4. `files` — copies `files/system/` verbatim onto the image root (`/`); paths under `files/system/` mirror the target filesystem
-5. `script` — runs `update-ca-trust` to regenerate the extracted trust bundles after `files` places the homelab root CA in `etc/pki/ca-trust/source/anchors/`
-6. `gschema-overrides` — compiles everything in `files/gschema-overrides/` into GNOME defaults
-7. `systemd` — enables `spacenavd.service` (system) and `spacenav-ws.service` (user); must run after `files` so the user unit exists before `systemctl --global enable`
-8. `signing` — cosign setup
+3. `dnf` — installs `ghostty` from the `scottames/ghostty` COPR (the module BlueBuild recommends over `rpm-ostree` for new additions on bootc images)
+4. `fonts` — Cascadia nerd-fonts
+5. `files` — copies `files/system/` verbatim onto the image root (`/`); paths under `files/system/` mirror the target filesystem
+6. `script` — runs `update-ca-trust` to regenerate the extracted trust bundles after `files` places the homelab root CA in `etc/pki/ca-trust/source/anchors/`
+7. `gschema-overrides` — compiles everything in `files/gschema-overrides/` into GNOME defaults
+8. `systemd` — enables `spacenavd.service` (system) and `spacenav-ws.service` (user); must run after `files` so the user unit exists before `systemctl --global enable`
+9. `signing` — cosign setup
 
 Supporting directories:
 
