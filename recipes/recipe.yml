@@ -29,7 +29,9 @@ modules:
         - scottames/ghostty
     install:
       packages:
+        - cyrus-sasl-devel
         - ghostty
+        - openldap-devel
 
   - type: default-flatpaks
     configurations:
