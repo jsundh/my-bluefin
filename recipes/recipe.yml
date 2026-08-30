@@ -31,6 +31,8 @@ modules:
       packages:
         - cyrus-sasl-devel
         - ghostty
+        - libgtop2
+        - lm_sensors
         - openldap-devel
 
   - type: default-flatpaks
@@ -57,6 +59,11 @@ modules:
   - type: script
     snippets:
       - update-ca-trust
+
+  - type: gnome-extensions
+    install:
+      - 1460  # Vitals
+      - 8675  # Automatic Theme Switcher
 
   - type: gschema-overrides
 
