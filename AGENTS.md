@@ -20,19 +20,9 @@ There are no tests. Real builds happen in GitHub Actions (`.github/workflows/bui
 
 ## Architecture
 
-`recipes/recipe.yml` is the single source of truth. It lists BlueBuild modules that run **in order** during the image build:
+`recipes/recipe.yml` is the source of truth for installed software and BlueBuild module configuration.
 
-1. `bling` — installs 1password
-2. `rpm-ostree` — adds the Sublime Text repo and installs `sublime-merge` (with `optfix` for its `/opt` install path), plus `spacenavd` and `uv` for SpaceMouse support
-3. `dnf` — installs `ghostty` from the `scottames/ghostty` COPR, plus development libraries and monitoring dependencies
-4. `default-flatpaks` — installs system-wide desktop applications
-5. `fonts` — Cascadia nerd-fonts
-6. `files` — copies `files/system/` verbatim onto the image root (`/`); paths under `files/system/` mirror the target filesystem
-7. `script` — runs `update-ca-trust` to regenerate the extracted trust bundles after `files` places the homelab root CA in `etc/pki/ca-trust/source/anchors/`
-8. `gnome-extensions` — installs Vitals and Automatic Theme Switcher
-9. `gschema-overrides` — compiles everything in `files/gschema-overrides/` into GNOME defaults
-10. `systemd` — enables `spacenavd.service` (system) and `spacenav-ws.service` (user); must run after `files` so the user unit exists before `systemctl --global enable`
-11. `signing` — cosign setup
+Modules execute in recipe order. The `files` module copies `files/system/` onto the image root, with source paths mirroring destination paths. Trust-store regeneration must run after CA files are copied, and service enablement must run after any custom unit files are installed.
 
 Supporting directories:
 
