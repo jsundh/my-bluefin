@@ -29,6 +29,8 @@ modules:
         - scottames/ghostty
     install:
       packages:
+        # Official ChatGPT desktop RPM (tracks the latest release).
+        - https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.x86_64.rpm
         - cyrus-sasl-devel
         - ghostty
         - libgtop2
