@@ -1,0 +1,1 @@
+SUBSYSTEM=="power_supply", KERNEL=="BAT1", ENV{CHARGE_LIMIT}="60,70"

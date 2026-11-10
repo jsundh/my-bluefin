@@ -45,6 +45,10 @@ The image ships [spacenavd](https://github.com/FreeSpacenav/spacenavd) (device d
 
 Note: the first start of `spacenav-ws.service` downloads the package from PyPI into `~/.cache/uv`; after that it starts offline.
 
+## Battery charge limit
+
+On Framework laptops the image hands charge control to the OS: "Preserve battery health" (GNOME Settings → Power, or the Quick Settings toggle) holds the battery between 60% and 70%. Set the BIOS charge limit to 100% once, otherwise the lower of the two limits wins and "Maximize charge" cannot reach a full charge.
+
 ## ISO
 
 If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.

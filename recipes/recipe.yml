@@ -66,6 +66,7 @@ modules:
     install:
       - 1460  # Vitals
       - 8675  # Automatic Theme Switcher
+      - 8389  # Preserve Battery Health
 
   - type: gschema-overrides
 
